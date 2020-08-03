@@ -1,3 +1,3 @@
 # FineSed3D_ACSTC
-the input data can be found in initial_files folder.
-the code can be found in code folder.
+The input data can be found in the initial_files folder.
+The code can be found in the code folder.
