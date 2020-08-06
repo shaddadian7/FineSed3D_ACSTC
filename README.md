@@ -2,4 +2,4 @@
 
 The code can be found in the source folder.
 
-The input data for each simulation case can be found in the corresponding folder.
+The input data for each simulation case can be found in the initial files folder in the corresponding files.
