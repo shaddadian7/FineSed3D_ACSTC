@@ -1,0 +1,25 @@
+The FineSed3D model is used in this study. 
+A constant pressure gradient drives the alongshore current.
+Periodic boundary conditions are assigned in x-y planes.
+No-slip, no-penetration wall boundary condition is assigned at the bottom boundary.
+Free-slip, no-penetration rigid lid is applied at the top boundary.
+Erosional-depositional boundary conditions are applied at the bottom.
+
+Before compilation, the Intel Math Kernel Library (MKL) and FFTW packages are needed to be installed. For more information about these libraries, please go to:
+https://software.interl.com/en-us/interl-mkl   ,   http://www.fftw.org/
+
+To compile the numerical model, the MakeFile should be changed if necessary. There are several necessary flags in MakeFile needed to specify below:
+-EXEC: the name of the executable command to be generated after compilation.
+-TGZFILE: the name of the compressed file.
+-INC: all the included files, which defines global variables, and mesh information.
+OBJS: the rule of generating the names of object files.
+MKL_HOME: define the directory of MKL library. It may vary with different operating systems.
+MKLIBS: define the library links for MKL.
+FLAGS: define code debug flags.
+DEBUGFLAGS: define flags for code debug.
+OPTFLAGS: define optimization option for compilation, use -O2 for optimization level 2.
+MPFLAGS: define parallelization library, use -OpenMP for OpenMP library
+-FCMP: define the include files for FFTW library
+-FCSP: define the included files for FFTW library
+
+for a more in-depth understanding of the code, the reader is referred to  file:///C:/Users/shadda7/Dropbox/CE7701/Group1/Sahar/FineSed3D_User_Manual.pdf
