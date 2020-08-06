@@ -1,1 +1,20 @@
-
+#MAIN
+vel
+0 20000000 1 1 !(istart iters ch_fin m_fin)
+1000 1 0 !(oi_chan out_press limit)
+9999999 1 99999999 9999999 24000 9999999 !(oi_timer oi_cfl oi_spec oi_mean oi_gbal oi_1d)
+180.d0 0.5 0.0001 1.0 !(re gradpbar dt cflmax)
+1 0 0 !(tt_yes twc_yes otau_yes)
+#END_MAIN
+#THRM
+conc
+1.0 62500.d0 0 1.65 0 1 0.01d0    !sc ri(or1/Fr^2) Tmax RR nbsq_yes md_rhs_yes theta
+-0.04 -0.04    !ttab ttat =-w_settling
+-0.04d0 -0.04d0    !ttbb ttbt =-1/(re*sc)
+0.0 0.0    !ttgb ttgt
+-0.04 0.0 0.0 0.0 0.0 0.0001d0 0.8d0 !w_settling tau_p beta_p rey_p phiave=phi_v/phi_ref Ero tauc
+#END_THRM
+#SP_VISC
+0.0 0.0 !(epssvx epssvy)
+1 1     !(msvx msvy)
+#END_SP_VISC
