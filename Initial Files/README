@@ -1,0 +1,77 @@
+istart: the time step to start the simulation, if it is not 0, ch_fin needs to be set to 1 to read the previous files at the starting time step.
+
+iters: number of time steps to run, in addition to the istart.
+
+If hot-start, set ch-fin to 1 and the output files at the time step istart will be read to initialize the simulation, or if cold start, set ch_fin to 0 for a cold start, and initial perturbations are added to the prescribed velocity profile, which is defined in initial_compact.F in code folder.
+
+If cold start (ch_fin=0), to generate the initial perturbation, set m_fin to 0 if the mean velocity is zero, else set to 1 to read mean velocity from "means.istart", where "istart" is specified as the starting time step.
+
+In this study, the velocity and concentration field of a clear fluid case at its latest time step is used as an initial condition for all the cases.
+
+oi_chanL output intervals (number of time steps)
+
+out_press: output pressure? set to 1 for yes, or 0 for no.
+
+limit: set the limit for output? set to 1 for yes, or 0 for no.
+
+oi_timer: output interval for time information, set to a large value if the output is not necessary.
+
+ch_cfl: output interval for CFL number
+
+oi_spec: output interval for spectral information, set to a large value if the output is not necessary.
+
+oi_mean: output interval for mean values, set to a large value if the output is not necessary.
+
+oi_gbal: output interval for TKE balances, such as TKE production, dissipation, etc. mode details can be found in stats.F in code folder.
+
+oi_1d: output interval 1D average information, set to a large value if the output is not necessary.
+
+re: define Reynolds number
+
+gradpbar: define the magnitude of the mean pressure gradient (constant pressure gradient for steady flow)
+
+dt: time step, dummy, redefined in main.F in code file
+
+cflmax: allowed maximum CFL number
+
+tt_yes: include sediment phase? set to 1 for yes, and the sediment phase will be solved, or set to 0 for clear fluid, and the sediment phase is not solved.
+
+twc_yes: use two-way coupled formulas, set 1 for yes, and 0 for no.
+
+otau_yes: include particle inertia? set to 1 for yes, and set to 0 to ignore the inertia effect.
+
+ri or 1/Fr2: define the bulk Richardson number or the particle Froud number
+
+Tmax: set to 1 if the Boussinesq approximation is disabled.
+
+RR: (s-1), where s is the specific gravity of sediment.
+
+nbsq_yes: quit Boussinesq approximation? set to 1 for yes, or set to 0 for no.
+
+md_rhs_yes: use right-hand-side of momentum equation to calculate the material derivative of the fluid velocity? set to 1 for yes, or set to 0 for no.
+
+ttab, ttbb: coefficients for the sediment bottom boundary condition, ttab=ws0, ttbb=-1/Re.Sc
+
+ttat, ttbt: coefficients for the sediment top boundary, ttat=ws0, ttbt=-1/Re.Sc
+
+w_settling: Stokes settling velocity (ws0)
+
+tau_p: Stokes number
+
+beta_p:1/s
+
+rey_p: particle Reynolds number, which is used in the hindered settling model
+
+phiave: set to 0 to ignore hindered settling.
+
+me: eroison rate coefficinet
+
+tauc=critical shear stress of erosion
+
+epssvx: set to greater than 0 if to use spectral viscosity in x-direction
+
+espsvy: set to greater then 0 if to use spectral viscosity in y-direction.
+
+msvx: should be less than nx/2, used in spectral viscosity.
+
+msvy: should be less than ny/2, used in spectral viscosity.
